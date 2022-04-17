@@ -1,0 +1,82 @@
+
+Q.1) Find the maximum number in an array
+     a[] = { 3,5,7,1,0};
+
+     Output - 7
+
+     public class FindMaxNumberInAnArray {
+
+	public static void main(String[] args) {
+		int[] arr = {22,45,42,66,55,78,41,20};
+		int len = arr.length;
+		int i = 1;
+		int print = findMaxNumber(arr,len,i);
+		System.out.println(print);
+
+	}
+
+	private static int findMaxNumber(int[] arr, int len, int i) {
+		if(len == i) {
+			return arr[0];
+		}
+		return Math.max(arr[len-1], findMaxNumber(arr,len-1,i));
+		
+		
+	}
+
+}
+
+
+------------------------***------------------------------------
+Q.2) Find the sum of all numbers in an array
+
+     public class SumOfArrayElements {
+
+	public static void main(String[] args) {
+		int[] arr = {22,45,42,66,55,78,41,20};
+		int len = arr.length;
+		int i = 1;
+		int print = findMaxNumber(arr,len,i);
+		System.out.println(print);
+
+	}
+
+	private static int findMaxNumber(int[] arr, int len, int i) {
+		if(len == i) {
+			return arr[0];
+		}
+		return arr[len-1] + findMaxNumber(arr,len-1,i);
+		
+		
+	}
+
+}
+
+
+
+------------------------***------------------------------------
+Q.3) Print the reverse of a number"
+
+     public class ReverseNumber {
+
+	public static void main(String[] args) {
+		int num = 12345;
+		printReverse(num);
+	}
+
+	private static void printReverse(int num) {
+		if(num < 10) {
+			System.out.print(num);
+			return;
+		}
+		else {
+			System.out.print(num%10);
+			printReverse(num/10);
+		}
+		
+	}
+
+}
+
+
+------------------------***------------------------------------

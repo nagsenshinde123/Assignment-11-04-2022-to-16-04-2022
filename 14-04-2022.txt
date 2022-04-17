@@ -1,0 +1,35 @@
+Q.1) Print the sum of the boundary elements and diagonal elements in a given matrix of size m and n
+
+     public class BoundaryElementsSum {
+
+	public static void main(String[] args) {
+		int[][] arr = {{1,2,3,4},
+				       {5,6,7,8},
+				       {9,2,4,5},
+				       {7,8,5,6}};
+		
+		sumOfBoundaryAndDiagonalElement(arr);
+
+	}
+
+	private static void sumOfBoundaryAndDiagonalElement(int[][] arr) {
+		int sum = 0;
+		for(int i=0; i<arr.length; i++) {
+			for(int j=0; j<arr[0].length; j++) {
+				if(i==0 || j==0 || i==arr.length-1 || j==arr[0].length-1 || i == j) {
+					sum = sum + arr[i][j];
+				}
+			}
+		}
+		System.out.println("The Boundary And Diagonal element sum is = " + sum);
+		
+	}
+
+}
+
+
+--------------------------------------------------------***------------------------------------------------
+Q.2) Print the prime numbers in the upper traingle of a 2D Matrix
+
+     
+--------------------------------------------------------***------------------------------------------------

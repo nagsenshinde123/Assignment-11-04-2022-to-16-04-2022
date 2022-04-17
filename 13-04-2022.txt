@@ -1,0 +1,115 @@
+Q.1) Find the maximum element in each row and each column in a matrix
+
+     public class FindMaxAndMinElementInEachRowAndCols {
+
+	public static void main(String[] args) {
+		int[][] arr = {{1,4,7,11,15,0,1},
+		               {2,5,8,12,19,11,7},
+		               {3,6,9,16,8,71,22},
+		               {10,13,14,17,24,21,0},
+		               {18,21,23,26,30,12,10}};
+		findMaxInRow(arr);
+		System.out.println("---------------***-------------------");
+		findMaxInColumn(arr);
+
+	}
+
+	
+	private static void findMaxInRow(int[][] arr) {
+		int row = arr.length;
+		int cols = arr[0].length;
+		//int max = 0;
+		for(int i=0; i<row; i++) {
+			int max = arr[i][0];
+			for(int j=0; j<cols; j++) {
+				if(max < arr[i][j]) {
+					max = arr[i][j];
+				}
+			}
+			System.out.println("Max element in each row = "+i+"  = "+max);
+		}
+		
+	}
+	private static void findMaxInColumn(int[][] arr) {
+		int row = arr.length;
+		int cols = arr[0].length;
+		for(int i=0; i<cols; ++i) {
+			int max = arr[0][i];
+			for(int j=1; j<row; ++j) {
+				if(max < arr[j][i]) {
+					max = arr[j][i];
+				}
+			}
+			System.out.println("Max element in each Column = "+i+"  = "+max);
+		}
+		
+	}
+
+
+}
+
+
+---------------------------------------------------***-------------------------------------------------------------
+Q.2) Search a sorted 2D Matrix
+     https://leetcode.com/problems/search-a-2d-matrix-ii/
+
+     public class SearchElementIn2DArray {
+
+	public static void main(String[] args) {
+		int[][] matrix = { {1,4,7,11,15},
+				   {2,5,8,12,19},
+				   {3,6,9,16,22},
+				   {10,13,14,17,24},
+				   {18,21,23,26,30}};
+		
+		int target = 5;
+		boolean search = searchMatrix(matrix, target);
+		System.out.println(search);
+		
+
+	}
+	public static boolean searchMatrix(int[][] matrix, int target) {
+        int row = matrix.length;
+        int cols = matrix[0].length;
+        for(int i=0; i<row; i++){
+            for(int j=0; j<cols; j++){
+                if(matrix[i][j] == target){
+                    return true;
+                }
+            }
+        }
+        return false;
+     }
+
+}
+
+
+---------------------------------------------------***-------------------------------------------------------------
+Q.3) Find the duplicate number
+     https://leetcode.com/problems/find-the-duplicate-number/
+     Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
+     There is only one repeated number in nums, return this repeated number.
+     You must solve the problem without modifying the array nums and uses only constant extra space.
+ 
+     Input: nums = [1,3,4,2,2]
+     Output: 2
+     Input: nums = [3,1,3,4,2]
+     Output: 3
+
+    class Solution {
+    public int findDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        int res = -1;
+        for(int i=1; i< nums.length; i++){
+            if(nums[i] == nums[i-1]){
+                res = nums[i];
+                break;
+            }
+        }
+        return res;
+    }
+}
+
+
+
+---------------------------------------------------***-------------------------------------------------------------
